@@ -22,6 +22,7 @@ public class EmprestimoController {
         this.emprestimoService = emprestimoService;
     }
 
+    // 1. Realizar um novo empréstimo
     @PostMapping
     public Emprestimo realizar(
             @RequestParam Long equipamentoId,
@@ -33,28 +34,58 @@ public class EmprestimoController {
         );
     }
 
+    // 2. Registrar a devolução de um empréstimo
     @PutMapping("/{id}/devolucao")
     public Emprestimo devolver(@PathVariable Long id) {
         return emprestimoService.devolverEmprestimo(id);
     }
 
+    // 3. Listar empréstimos atrasados
     @GetMapping(params = "atrasados=true")
     public List<Emprestimo> listarAtrasados() {
         return emprestimoService.listarAtrasados();
     }
 
+    // 4. Listar empréstimos por colaborador
     @GetMapping("/colaborador/{id}")
     public List<Emprestimo> listarPorColaborador(
             @PathVariable Long id) {
+
         return emprestimoService.listarPorColaborador(id);
     }
 
+    // 5. Listar todos os empréstimos
+    @GetMapping
+    public List<Emprestimo> listarTodos() {
+        return emprestimoService.listarTodos();
+    }
+
+    // 6. Buscar um empréstimo pelo ID
+    @GetMapping("/{id}")
+    public Emprestimo buscar(@PathVariable Long id) {
+        return emprestimoService.buscar(id);
+    }
+
+    // 7. Tratar conflitos de regras de negócio
+    // Exemplo: equipamento indisponível
+    // ou empréstimo já devolvido
     @ExceptionHandler(IllegalStateException.class)
     public ResponseEntity<Map<String, String>> tratarErro(
             IllegalStateException ex) {
 
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
+                .body(Map.of("mensagem", ex.getMessage()));
+    }
+
+    // 8. Tratar recursos não encontrados
+    // Exemplo: empréstimo inexistente
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, String>> tratarNaoEncontrado(
+            IllegalArgumentException ex) {
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
                 .body(Map.of("mensagem", ex.getMessage()));
     }
 }
