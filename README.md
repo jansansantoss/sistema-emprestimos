@@ -1,4 +1,4 @@
-# 📚 Projeto 2 — Sistema de Empréstimo de Equipamentos
+Projeto 2 — Sistema de Empréstimo de Equipamentos
 
 Este é meu segundo projeto com Java e Spring Boot.
 
@@ -616,7 +616,6 @@ Além das partes obrigatórias, a atividade apresenta recursos extras. Deixei a 
 
 ## 11. O que aprendi e as dificuldades que encontrei
 
-**Relato pessoal:** esta seção reúne o que aprendi durante o projeto e pode ser ajustada com minhas próprias palavras antes da entrega.
 
 Durante o desenvolvimento deste projeto, comecei a entender melhor como as classes de uma aplicação Java trabalham juntas.
 
