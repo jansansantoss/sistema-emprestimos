@@ -595,8 +595,6 @@ Para evitar deixar o console exposto no Render, a configuração indicada é:
 
 ## 10. Bônus opcionais
 
-Além das partes obrigatórias, a atividade apresenta recursos extras. Deixei a lista abaixo sem marcação para não afirmar que implementei algo que ainda não conferi no código.
-
 ### Nível 1
 
 - [ ] **Swagger:** documentação visual das rotas, com uma interface para consultar e testar a API.
