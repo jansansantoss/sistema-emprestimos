@@ -651,7 +651,7 @@ Projeto desenvolvido como atividade prática de Java e Spring Boot.
 
 ## 13. Entrega da atividade
 
-O checklist da professora pede:
+O checklist da atividade pede:
 
 - [ ] Código publicado no GitHub, com o último push realizado.
 - [ ] README com instruções de execução, rotas, link do Render e bônus feitos.
@@ -665,3 +665,4 @@ O checklist da professora pede:
 
 Este projeto representa mais uma etapa do meu aprendizado com Java, Spring Boot e desenvolvimento de APIs.
 
+Falta gravar o vídeo e adicionar aqui no Readme
