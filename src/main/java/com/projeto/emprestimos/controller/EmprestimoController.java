@@ -22,7 +22,8 @@ public class EmprestimoController {
         this.emprestimoService = emprestimoService;
     }
 
-    // 1.Aqui ficou deinido que é para realizar um novo empréstimo
+    // 1.Comentando o código para não me perder posteriormente rsrsrs
+    // ..Aqui ficou deinido que é para realizar um novo empréstimo
     @PostMapping
     public Emprestimo realizar(
             @RequestParam Long equipamentoId,

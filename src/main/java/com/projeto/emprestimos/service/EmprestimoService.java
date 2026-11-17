@@ -89,12 +89,12 @@ public class EmprestimoService {
         return emprestimoRepository.save(emprestimo);
     }
 
-    // NOVO: listar todos os empréstimos
+    // aqui em NOVO é para listar todos os empréstimos
     public List<Emprestimo> listarTodos() {
         return emprestimoRepository.findAll();
     }
 
-    // NOVO: buscar empréstimo pelo ID
+    // NOVO aqui é para buscar empréstimo pelo ID
     public Emprestimo buscar(Long id) {
         return emprestimoRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException(
