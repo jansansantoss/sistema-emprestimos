@@ -650,6 +650,15 @@ Na parte do deploy, aprendi a diferença entre executar uma API localmente e dis
 
 Com o Git, GitHub, Docker e Render, comecei a entender melhor o caminho que o código percorre até ficar disponível para outras pessoas.
 
+Durante as aulas, também conheci o conceito de DTO (Data Transfer Object) e aprendi que ele serve para organizar os dados que uma API recebe ou envia.
+
+No meu projeto, não utilizei uma classe DTO específica para registrar os empréstimos. Optei por receber o ID do equipamento e o ID do colaborador diretamente pela URL, utilizando @RequestParam no EmprestimoController.
+
+Com isso, consegui entender que existem diferentes formas de receber informações em uma API e que os DTOs podem ajudar a organizar melhor esses dados.
+
+Pretendo estudar mais sobre DTOs e utilizá-los em projetos futuros, conforme for avançando nos meus estudos de Java e Spring Boot.
+
+
 Foi um projeto importante para praticar os conceitos das aulas e aprender a resolver problemas durante o desenvolvimento.
 
 ## 12. Autor
