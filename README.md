@@ -598,19 +598,36 @@ Para evitar deixar o console exposto no Render, a configuração indicada é:
 ### Nível 1
 
 - [ ] **Swagger:** documentação visual das rotas, com uma interface para consultar e testar a API.
-- [ ] **Actuator:** recurso de monitoramento que permite verificar a saúde da aplicação, por exemplo pela rota `/actuator/health`.
+- Durante o desenvolvimento do projeto, tentei acessar o Swagger pelo navegador, mas a página apresentou o erro 404.
 
-### Nível 2
+Depois, verifiquei o arquivo pom.xml e percebi que a dependência do Swagger ainda não estava configurada.
+Para instalar o Swagger no Intellij IDEA como meu projeto utiliza spring boot 4, teria que consultar a documentação de compatibilidade.
+sendo assim, se era necessário procurar a seção de dependencias no pom.xml e acrescentar dentro do pom
 
-- [ ] **Validação de dados:** uso de anotações como `@NotBlank`, `@Email`, `@NotNull` e `@Valid`.
-- [ ] **Tratamento de erros:** respostas HTTP específicas, como 400, 404 e 409. No meu `EmprestimoController`, usei `@ExceptionHandler` para os casos de 404 e 409, sem criar um `@RestControllerAdvice` global.
-- [ ] **Testes de integração com MockMvc:** testes que simulam requisições às rotas da API.
-- [ ] **Relacionamento com @ManyToOne:** associação entre empréstimo, equipamento e colaborador usando objetos relacionados.
+depois salvar e atualizar o Maven.
 
-### Nível 3
+testar o load Maven changes ou atualizar direto pelo ícone do Maven.
+aguardar a conclusão da importação das dependências.
+Reiniciar a aplicação e executar novamente meu EmprestimosApplication.java para configurmar que a aplicação iniciou sem erros.
 
-- [ ] **Segurança com Spring Security e JWT:** autenticação por token e controle de permissões para ADMIN e COLABORADOR.
-- [ ] **GitHub Actions:** execução automática dos testes quando novas alterações são enviadas ao repositório.
+Depois abrir o Swagger http://localhost:8080/swagger-ui.html e se tivesse tudo configurado corretamente 
+ia aparecer uma interface com os endpoints da minha API, Como minha API já estava funcionando normalmente no Postman e publicada no Render, preferi não fazer essa alteração agora, para evitar possíveis problemas antes da entrega.
+
+Decidi deixar a instalação do Swagger para outro momento, quando puder estudar melhor seu funcionamento e realizar os testes com mais tranquilidade.
+
+Considerações sobre os bônus opcionais
+
+Como ainda estou aprendendo Java e Spring Boot, procurei me concentrar primeiro nas quatro partes obrigatórias da atividade: criar as entidades e rotas da API, desenvolver as regras de negócio R1 a R10, realizar os testes unitários com JUnit 5 e publicar o projeto no Render utilizando Docker.
+
+Durante o desenvolvimento, também consegui implementar uma parte do bônus de tratamento de erros, que faz parte do Nível 2.
+
+No arquivo EmprestimoController.java, utilizei o @ExceptionHandler para tratar algumas situações de erro. Por exemplo, quando um recurso não é encontrado, o sistema pode retornar 404 Not Found. Já quando uma operação não pode ser realizada por causa de uma regra do sistema, pode retornar 409 Conflict.
+
+Esse tratamento foi feito diretamente no controller, sem precisar criar uma classe separada com @RestControllerAdvice.
+
+Decidi não implementar os outros bônus neste momento, porque preferi entender melhor o funcionamento do projeto, realizar os testes e garantir que a API estivesse publicada no Render.
+
+Pretendo estudar esses recursos com mais calma e, futuramente, utilizá-los para melhorar o projeto e continuar aprendendo Java.
 
 ## 11. O que aprendi e as dificuldades que encontrei
 
