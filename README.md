@@ -689,4 +689,4 @@ O checklist da atividade pede:
 
 Este projeto representa mais uma etapa do meu aprendizado com Java, Spring Boot e desenvolvimento de APIs.
 
-Falta gravar o vídeo e adicionar aqui no Readme
+Link do vídeo postado: https://www.youtube.com/watch?v=OQF-0RsHWEo
